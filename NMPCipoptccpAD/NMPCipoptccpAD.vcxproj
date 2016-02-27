@@ -1,0 +1,565 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{0391F3ED-3EF1-4163-AF22-CEDBD6ECED33}</ProjectGuid>
+    <RootNamespace>NMPCipoptccpAD</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>14.0.22823.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>..\libipopt\include\;..\libipopt\include\coin;..\eigen\;..\cppad-20140403\cppad_ipopt\src;..\cppad-20140403\cppad;..\cppad-20140403;..\KF;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>HAVE_CONFIG_H;_CRT_SECURE_NO_WARNINGS;WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <OpenMPSupport>true</OpenMPSupport>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>kernel32.lib;ipopt-vc8.lib;IpOptFSS.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\libipopt\lib\Win32\ReleaseMKL;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\libipopt\include\coin;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>HAVE_CONFIG_H;_CRT_SECURE_NO_WARNINGS;WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>kernel32.lib;ipopt-vc8.lib;IpOptFSS.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\libipopt\lib\win32\ReleaseMKL;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\cppad-20140403\cppad_ipopt\src\cppad_ipopt_nlp.cpp" />
+    <ClCompile Include="..\cppad-20140403\cppad_ipopt\src\hes_fg_map.cpp" />
+    <ClCompile Include="..\cppad-20140403\cppad_ipopt\src\jac_g_map.cpp" />
+    <ClCompile Include="..\cppad-20140403\cppad_ipopt\src\sparse_map2vec.cpp" />
+    <ClCompile Include="..\cppad-20140403\cppad_ipopt\src\vec_fun_pattern.cpp" />
+    <ClCompile Include="Cost.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="NMPCFormulation.cpp" />
+    <ClCompile Include="optFormulation.cpp" />
+    <ClCompile Include="realModel.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\cppad-20140403\cppad\example\base_adolc.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\example\cppad_eigen.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\example\eigen_plugin.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\example\matrix_mul.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\ipopt\solve.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\ipopt\solve_callback.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\ipopt\solve_result.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\abort_recording.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\abs.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\abs_op.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\acos_op.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\ad.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\add.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\add_eq.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\add_op.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\ad_assign.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\ad_binary.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\ad_ctor.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\ad_fun.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\ad_io.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\ad_tape.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\ad_valued.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\arithmetic.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\asin_op.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\atan2.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\atan_op.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\atomic_base.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\base_complex.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\base_cond_exp.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\base_double.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\base_float.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\base_std_math.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\bender_quad.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\bool_fun.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\bool_valued.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\capacity_order.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\checkpoint.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\compare.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\compute_assign.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\comp_op.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\cond_exp.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\cond_op.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\convert.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\cosh_op.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\cos_op.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\cppad_assert.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\cskip_op.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\csum_op.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\declare_ad.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\define.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\dependent.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\discrete.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\discrete_op.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\div.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\div_eq.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\div_op.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\drivers.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\epsilon.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\equal_op_seq.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\erf.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\exp_op.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\forward.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\forward0sweep.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\forward1sweep.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\for_jac_sweep.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\for_one.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\for_sparse_jac.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\for_two.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\fun_check.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\fun_construct.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\fun_eval.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\hash_code.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\hessian.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\identical.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\independent.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\integer.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\jacobian.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\limits.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\load_op.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\log_op.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\lu_ratio.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\math_other.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\mul.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\mul_eq.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\mul_op.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\near_equal_ext.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\num_skip.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\old_atomic.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\omp_max_thread.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\op.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\optimize.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\opt_val_hes.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\op_code.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\ordered.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\parallel_ad.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\parameter_op.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\par_var.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\player.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\pod_vector.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\pow.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\pow_op.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\print_for.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\print_op.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\prototype_op.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\recorder.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\reverse.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\reverse_sweep.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\rev_hes_sweep.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\rev_jac_sweep.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\rev_one.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\rev_sparse_hes.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\rev_sparse_jac.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\rev_two.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\sign.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\sign_op.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\sinh_op.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\sin_op.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\sparse.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\sparse_binary_op.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\sparse_color.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\sparse_hessian.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\sparse_jacobian.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\sparse_list.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\sparse_pack.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\sparse_pattern.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\sparse_set.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\sparse_unary_op.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\sqrt_op.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\std_math_ad.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\std_set.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\store_op.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\sub.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\sub_eq.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\sub_op.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\tanh_op.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\tan_op.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\tape_link.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\testvector.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\test_vector.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\unary_minus.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\unary_plus.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\undef.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\user_ad.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\value.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\var2par.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad\local\vec_ad.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad_ipopt\src\cppad_ipopt_nlp.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad_ipopt\src\fun_record.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad_ipopt\src\hes_fg_map.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad_ipopt\src\jac_g_map.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad_ipopt\src\sparse_map2vec.hpp" />
+    <ClInclude Include="..\cppad-20140403\cppad_ipopt\src\vec_fun_pattern.hpp" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Cholesky\LDLT.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Cholesky\LLT.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Cholesky\LLT_MKL.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\CholmodSupport\CholmodSupport.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\arch\AltiVec\Complex.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\arch\AltiVec\PacketMath.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\arch\Default\Settings.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\arch\NEON\Complex.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\arch\NEON\PacketMath.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\arch\SSE\Complex.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\arch\SSE\MathFunctions.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\arch\SSE\PacketMath.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\Array.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\ArrayBase.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\ArrayWrapper.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\Assign.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\Assign_MKL.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\BandMatrix.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\Block.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\BooleanRedux.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\CommaInitializer.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\CoreIterators.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\CwiseBinaryOp.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\CwiseNullaryOp.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\CwiseUnaryOp.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\CwiseUnaryView.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\DenseBase.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\DenseCoeffsBase.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\DenseStorage.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\Diagonal.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\DiagonalMatrix.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\DiagonalProduct.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\Dot.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\EigenBase.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\Flagged.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\ForceAlignedAccess.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\Functors.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\Fuzzy.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\GeneralProduct.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\GenericPacketMath.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\GlobalFunctions.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\IO.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\Map.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\MapBase.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\MathFunctions.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\Matrix.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\MatrixBase.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\NestByValue.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\NoAlias.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\NumTraits.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\PermutationMatrix.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\PlainObjectBase.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\ProductBase.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\products\CoeffBasedProduct.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\products\GeneralBlockPanelKernel.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\products\GeneralMatrixMatrix.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\products\GeneralMatrixMatrixTriangular.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\products\GeneralMatrixMatrixTriangular_MKL.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\products\GeneralMatrixMatrix_MKL.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\products\GeneralMatrixVector.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\products\GeneralMatrixVector_MKL.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\products\Parallelizer.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\products\SelfadjointMatrixMatrix.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\products\SelfadjointMatrixMatrix_MKL.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\products\SelfadjointMatrixVector.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\products\SelfadjointMatrixVector_MKL.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\products\SelfadjointProduct.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\products\SelfadjointRank2Update.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\products\TriangularMatrixMatrix.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\products\TriangularMatrixMatrix_MKL.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\products\TriangularMatrixVector.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\products\TriangularMatrixVector_MKL.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\products\TriangularSolverMatrix.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\products\TriangularSolverMatrix_MKL.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\products\TriangularSolverVector.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\Random.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\Redux.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\Ref.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\Replicate.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\ReturnByValue.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\Reverse.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\Select.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\SelfAdjointView.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\SelfCwiseBinaryOp.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\SolveTriangular.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\StableNorm.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\Stride.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\Swap.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\Transpose.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\Transpositions.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\TriangularMatrix.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\util\BlasUtil.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\util\Constants.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\util\DisableStupidWarnings.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\util\ForwardDeclarations.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\util\Macros.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\util\Memory.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\util\Meta.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\util\MKL_support.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\util\NonMPL2.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\util\ReenableStupidWarnings.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\util\StaticAssert.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\util\XprHelper.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\VectorBlock.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\VectorwiseOp.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\Visitor.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigen2Support\Block.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigen2Support\Cwise.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigen2Support\CwiseOperators.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigen2Support\Geometry\AlignedBox.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigen2Support\Geometry\All.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigen2Support\Geometry\AngleAxis.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigen2Support\Geometry\Hyperplane.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigen2Support\Geometry\ParametrizedLine.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigen2Support\Geometry\Quaternion.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigen2Support\Geometry\Rotation2D.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigen2Support\Geometry\RotationBase.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigen2Support\Geometry\Scaling.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigen2Support\Geometry\Transform.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigen2Support\Geometry\Translation.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigen2Support\Lazy.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigen2Support\LeastSquares.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigen2Support\LU.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigen2Support\Macros.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigen2Support\MathFunctions.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigen2Support\Memory.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigen2Support\Meta.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigen2Support\Minor.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigen2Support\QR.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigen2Support\SVD.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigen2Support\TriangularSolver.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigen2Support\VectorBlock.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigenvalues\ComplexEigenSolver.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigenvalues\ComplexSchur.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigenvalues\ComplexSchur_MKL.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigenvalues\EigenSolver.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigenvalues\GeneralizedEigenSolver.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigenvalues\GeneralizedSelfAdjointEigenSolver.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigenvalues\HessenbergDecomposition.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigenvalues\MatrixBaseEigenvalues.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigenvalues\RealQZ.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigenvalues\RealSchur.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigenvalues\RealSchur_MKL.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigenvalues\SelfAdjointEigenSolver.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigenvalues\SelfAdjointEigenSolver_MKL.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigenvalues\Tridiagonalization.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Geometry\AlignedBox.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Geometry\AngleAxis.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Geometry\arch\Geometry_SSE.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Geometry\EulerAngles.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Geometry\Homogeneous.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Geometry\Hyperplane.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Geometry\OrthoMethods.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Geometry\ParametrizedLine.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Geometry\Quaternion.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Geometry\Rotation2D.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Geometry\RotationBase.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Geometry\Scaling.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Geometry\Transform.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Geometry\Translation.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Geometry\Umeyama.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Householder\BlockHouseholder.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Householder\Householder.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Householder\HouseholderSequence.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\IterativeLinearSolvers\BasicPreconditioners.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\IterativeLinearSolvers\BiCGSTAB.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\IterativeLinearSolvers\ConjugateGradient.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\IterativeLinearSolvers\IncompleteLUT.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\IterativeLinearSolvers\IterativeSolverBase.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Jacobi\Jacobi.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\LU\arch\Inverse_SSE.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\LU\Determinant.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\LU\FullPivLU.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\LU\Inverse.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\LU\PartialPivLU.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\LU\PartialPivLU_MKL.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\MetisSupport\MetisSupport.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\misc\blas.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\misc\Image.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\misc\Kernel.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\misc\Solve.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\misc\SparseSolve.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\OrderingMethods\Amd.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\OrderingMethods\Eigen_Colamd.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\OrderingMethods\Ordering.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\PardisoSupport\PardisoSupport.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\PaStiXSupport\PaStiXSupport.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\plugins\ArrayCwiseBinaryOps.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\plugins\ArrayCwiseUnaryOps.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\plugins\BlockMethods.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\plugins\CommonCwiseBinaryOps.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\plugins\CommonCwiseUnaryOps.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\plugins\MatrixCwiseBinaryOps.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\plugins\MatrixCwiseUnaryOps.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\QR\ColPivHouseholderQR.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\QR\ColPivHouseholderQR_MKL.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\QR\FullPivHouseholderQR.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\QR\HouseholderQR.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\QR\HouseholderQR_MKL.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseCholesky\SimplicialCholesky.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseCholesky\SimplicialCholesky_impl.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseCore\AmbiVector.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseCore\CompressedStorage.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseCore\ConservativeSparseSparseProduct.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseCore\MappedSparseMatrix.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseCore\SparseBlock.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseCore\SparseColEtree.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseCore\SparseCwiseBinaryOp.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseCore\SparseCwiseUnaryOp.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseCore\SparseDenseProduct.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseCore\SparseDiagonalProduct.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseCore\SparseDot.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseCore\SparseFuzzy.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseCore\SparseMatrix.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseCore\SparseMatrixBase.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseCore\SparsePermutation.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseCore\SparseProduct.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseCore\SparseRedux.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseCore\SparseSelfAdjointView.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseCore\SparseSparseProductWithPruning.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseCore\SparseTranspose.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseCore\SparseTriangularView.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseCore\SparseUtil.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseCore\SparseVector.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseCore\SparseView.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseCore\TriangularSolver.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseLU\SparseLU.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseLU\SparseLUImpl.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseLU\SparseLU_column_bmod.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseLU\SparseLU_column_dfs.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseLU\SparseLU_copy_to_ucol.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseLU\SparseLU_gemm_kernel.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseLU\SparseLU_heap_relax_snode.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseLU\SparseLU_kernel_bmod.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseLU\SparseLU_Memory.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseLU\SparseLU_panel_bmod.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseLU\SparseLU_panel_dfs.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseLU\SparseLU_pivotL.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseLU\SparseLU_pruneL.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseLU\SparseLU_relax_snode.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseLU\SparseLU_Structs.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseLU\SparseLU_SupernodalMatrix.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseLU\SparseLU_Utils.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseQR\SparseQR.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SPQRSupport\SuiteSparseQRSupport.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\StlSupport\details.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\StlSupport\StdDeque.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\StlSupport\StdList.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\StlSupport\StdVector.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SuperLUSupport\SuperLUSupport.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SVD\JacobiSVD.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SVD\JacobiSVD_MKL.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SVD\UpperBidiagonalization.h" />
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\UmfPackSupport\UmfPackSupport.h" />
+    <ClInclude Include="..\KF\EKF.h" />
+    <ClInclude Include="..\KF\functorTank.h" />
+    <ClInclude Include="..\KF\LKF.h" />
+    <ClInclude Include="..\KF\LTI.h" />
+    <ClInclude Include="..\KF\UKF.h" />
+    <ClInclude Include="..\libipopt\include\coin\config_ipopt.h" />
+    <ClInclude Include="..\libipopt\include\coin\config_ipopt_default.h" />
+    <ClInclude Include="..\libipopt\include\coin\IpAlgTypes.hpp" />
+    <ClInclude Include="..\libipopt\include\coin\IpCachedResults.hpp" />
+    <ClInclude Include="..\libipopt\include\coin\IpDebug.hpp" />
+    <ClInclude Include="..\libipopt\include\coin\IpException.hpp" />
+    <ClInclude Include="..\libipopt\include\coin\IpIpoptApplication.hpp" />
+    <ClInclude Include="..\libipopt\include\coin\IpIpoptCalculatedQuantities.hpp" />
+    <ClInclude Include="..\libipopt\include\coin\IpJournalist.hpp" />
+    <ClInclude Include="..\libipopt\include\coin\IpMatrix.hpp" />
+    <ClInclude Include="..\libipopt\include\coin\IpNLP.hpp" />
+    <ClInclude Include="..\libipopt\include\coin\IpObserver.hpp" />
+    <ClInclude Include="..\libipopt\include\coin\IpoptConfig.h" />
+    <ClInclude Include="..\libipopt\include\coin\IpOptionsList.hpp" />
+    <ClInclude Include="..\libipopt\include\coin\IpReferenced.hpp" />
+    <ClInclude Include="..\libipopt\include\coin\IpRegOptions.hpp" />
+    <ClInclude Include="..\libipopt\include\coin\IpReturnCodes.h" />
+    <ClInclude Include="..\libipopt\include\coin\IpReturnCodes.hpp" />
+    <ClInclude Include="..\libipopt\include\coin\IpReturnCodes_inc.h" />
+    <ClInclude Include="..\libipopt\include\coin\IpSmartPtr.hpp" />
+    <ClInclude Include="..\libipopt\include\coin\IpSolveStatistics.hpp" />
+    <ClInclude Include="..\libipopt\include\coin\IpStdCInterface.h" />
+    <ClInclude Include="..\libipopt\include\coin\IpSymMatrix.hpp" />
+    <ClInclude Include="..\libipopt\include\coin\IpTaggedObject.hpp" />
+    <ClInclude Include="..\libipopt\include\coin\IpTimedTask.hpp" />
+    <ClInclude Include="..\libipopt\include\coin\IpTNLP.hpp" />
+    <ClInclude Include="..\libipopt\include\coin\IpTNLPReducer.hpp" />
+    <ClInclude Include="..\libipopt\include\coin\IpTypes.hpp" />
+    <ClInclude Include="..\libipopt\include\coin\IpUtils.hpp" />
+    <ClInclude Include="..\libipopt\include\coin\IpVector.hpp" />
+    <ClInclude Include="Cost.hpp" />
+    <ClInclude Include="NMPCFormulation.hpp" />
+    <ClInclude Include="optFormulation.hpp" />
+    <ClInclude Include="realModel.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\cppad-20140403\cppad\local\config.h.in" />
+    <None Include="..\libipopt\include\coin\IpReturnCodes.inc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

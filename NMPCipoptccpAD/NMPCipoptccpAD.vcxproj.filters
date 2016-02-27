@@ -1,0 +1,1505 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="KF">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="EigenSRC">
+      <UniqueIdentifier>{fdcc4666-7a99-42a0-80d2-9eb2843a2087}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EigenSRC\cholesky">
+      <UniqueIdentifier>{ce35da50-7711-44ad-ae76-6ebce40125c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EigenSRC\CholmodSupport">
+      <UniqueIdentifier>{8d125961-1c7a-4545-a764-fba0297ba923}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EigenSRC\Core">
+      <UniqueIdentifier>{4a3b1825-a781-4856-b611-32a2a928667c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EigenSRC\Core\arch">
+      <UniqueIdentifier>{80410f9e-9ffc-4f47-bb5d-773f4f393da2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EigenSRC\Core\products">
+      <UniqueIdentifier>{dd325970-0ae4-4fe4-9eee-e95a54b2c615}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EigenSRC\Core\util">
+      <UniqueIdentifier>{de277ab6-0821-4709-aae5-7bd8972f9c0c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EigenSRC\Eigen2Suport">
+      <UniqueIdentifier>{5a6cf4b4-9896-4faa-87ea-8066e2fd3054}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EigenSRC\Geometry">
+      <UniqueIdentifier>{3801d887-d7f5-4a8f-ae37-082e0a372532}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EigenSRC\Householder">
+      <UniqueIdentifier>{9a85c798-5876-4eb1-b186-28b4f2eaa306}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EigenSRC\IterativeLinearSolver">
+      <UniqueIdentifier>{0baceda3-7e58-4ef3-86f7-dad31ade3308}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EigenSRC\Jacobi">
+      <UniqueIdentifier>{6c76410e-f24e-4f2a-945c-f7dec7c0fd32}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EigenSRC\LU">
+      <UniqueIdentifier>{007acc88-7bd2-4f7b-b851-2b641af4357c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EigenSRC\MetisSupport">
+      <UniqueIdentifier>{495b79df-a353-44ab-9a43-b812f4f56fe1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EigenSRC\Eigenvalues">
+      <UniqueIdentifier>{c177591f-d609-45a3-bc81-bcd6a78ee188}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EigenSRC\misc">
+      <UniqueIdentifier>{5f13d6d4-3a01-4825-8d8a-b69f6cf1abb3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EigenSRC\OrderingMethods">
+      <UniqueIdentifier>{e3f0abf4-3211-4fdb-8ce8-5efba59b57d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EigenSRC\PardisoSupport">
+      <UniqueIdentifier>{9bd3e625-8be9-4b55-8b2d-13c59cb631ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EigenSRC\PaStiXSupport">
+      <UniqueIdentifier>{8b15c76e-2335-46e1-9315-7e71aed5a328}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EigenSRC\plugins">
+      <UniqueIdentifier>{58b2af12-1bc4-4394-b94a-ff2590a3c1ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EigenSRC\QR">
+      <UniqueIdentifier>{7ae9a1d2-7a8f-43f6-add2-5dcd6e63f0b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EigenSRC\SparseCholesky">
+      <UniqueIdentifier>{7670d011-d895-497a-b7ef-cc05d06f3996}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EigenSRC\SparseCore">
+      <UniqueIdentifier>{20d98370-2751-4e05-8280-adf348410339}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EigenSRC\SparseLU">
+      <UniqueIdentifier>{d40bd7a1-6173-4f70-a9ed-864e6d20587e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EigenSRC\SparseQR">
+      <UniqueIdentifier>{cee576b1-56dc-4aca-a71f-ec7c88d7c3f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EigenSRC\SPQRSupport">
+      <UniqueIdentifier>{e866f112-9059-42ef-b548-983719e9dfeb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EigenSRC\StlSupport">
+      <UniqueIdentifier>{1047a32a-dbf3-40ea-b7bf-4164c3ee123b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EigenSRC\SuperLUSupport">
+      <UniqueIdentifier>{c95bb0f0-9c37-4c9d-9a6f-68f65487f49b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EigenSRC\SVD">
+      <UniqueIdentifier>{cbd07964-8826-4d77-847c-c51d7ca46297}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EigenSRC\UmfPackSupport">
+      <UniqueIdentifier>{7d929045-b532-4c04-873c-375d7714f091}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cppAD">
+      <UniqueIdentifier>{32021837-0bd9-4dc3-84ea-1510f03648ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cppAD\cppADIpopt">
+      <UniqueIdentifier>{d0251476-3611-4309-90c5-2895b11f545c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cppAD\cppAD">
+      <UniqueIdentifier>{e476f7aa-8c89-4516-86e9-dc397580d3bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cppAD\cppAD\ipopt">
+      <UniqueIdentifier>{89641fea-23a5-43df-a86a-566bbec94617}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cppAD\cppAD\example">
+      <UniqueIdentifier>{be68a351-4c1e-463e-9e10-e68f9a8f98a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cppAD\cppAD\local">
+      <UniqueIdentifier>{61ab6aa8-9398-4d49-85eb-013c764282f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ipopt">
+      <UniqueIdentifier>{63e8eedb-5c30-4ccd-8cc3-e51082bb7092}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Cost.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NMPCFormulation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="optFormulation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="realModel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\cppad-20140403\cppad_ipopt\src\cppad_ipopt_nlp.cpp">
+      <Filter>cppAD\cppADIpopt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\cppad-20140403\cppad_ipopt\src\hes_fg_map.cpp">
+      <Filter>cppAD\cppADIpopt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\cppad-20140403\cppad_ipopt\src\jac_g_map.cpp">
+      <Filter>cppAD\cppADIpopt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\cppad-20140403\cppad_ipopt\src\sparse_map2vec.cpp">
+      <Filter>cppAD\cppADIpopt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\cppad-20140403\cppad_ipopt\src\vec_fun_pattern.cpp">
+      <Filter>cppAD\cppADIpopt</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Cost.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NMPCFormulation.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="optFormulation.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="realModel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\KF\EKF.h">
+      <Filter>KF</Filter>
+    </ClInclude>
+    <ClInclude Include="..\KF\functorTank.h">
+      <Filter>KF</Filter>
+    </ClInclude>
+    <ClInclude Include="..\KF\LKF.h">
+      <Filter>KF</Filter>
+    </ClInclude>
+    <ClInclude Include="..\KF\LTI.h">
+      <Filter>KF</Filter>
+    </ClInclude>
+    <ClInclude Include="..\KF\UKF.h">
+      <Filter>KF</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Cholesky\LDLT.h">
+      <Filter>EigenSRC\cholesky</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Cholesky\LLT.h">
+      <Filter>EigenSRC\cholesky</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Cholesky\LLT_MKL.h">
+      <Filter>EigenSRC\cholesky</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\CholmodSupport\CholmodSupport.h">
+      <Filter>EigenSRC\CholmodSupport</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\Array.h">
+      <Filter>EigenSRC\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\ArrayBase.h">
+      <Filter>EigenSRC\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\ArrayWrapper.h">
+      <Filter>EigenSRC\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\Assign.h">
+      <Filter>EigenSRC\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\Assign_MKL.h">
+      <Filter>EigenSRC\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\BandMatrix.h">
+      <Filter>EigenSRC\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\Block.h">
+      <Filter>EigenSRC\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\BooleanRedux.h">
+      <Filter>EigenSRC\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\CommaInitializer.h">
+      <Filter>EigenSRC\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\CoreIterators.h">
+      <Filter>EigenSRC\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\CwiseBinaryOp.h">
+      <Filter>EigenSRC\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\CwiseNullaryOp.h">
+      <Filter>EigenSRC\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\CwiseUnaryOp.h">
+      <Filter>EigenSRC\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\CwiseUnaryView.h">
+      <Filter>EigenSRC\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\DenseBase.h">
+      <Filter>EigenSRC\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\DenseCoeffsBase.h">
+      <Filter>EigenSRC\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\DenseStorage.h">
+      <Filter>EigenSRC\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\Diagonal.h">
+      <Filter>EigenSRC\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\DiagonalMatrix.h">
+      <Filter>EigenSRC\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\DiagonalProduct.h">
+      <Filter>EigenSRC\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\Dot.h">
+      <Filter>EigenSRC\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\EigenBase.h">
+      <Filter>EigenSRC\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\Flagged.h">
+      <Filter>EigenSRC\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\ForceAlignedAccess.h">
+      <Filter>EigenSRC\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\Functors.h">
+      <Filter>EigenSRC\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\Fuzzy.h">
+      <Filter>EigenSRC\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\GeneralProduct.h">
+      <Filter>EigenSRC\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\GenericPacketMath.h">
+      <Filter>EigenSRC\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\GlobalFunctions.h">
+      <Filter>EigenSRC\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\IO.h">
+      <Filter>EigenSRC\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\Map.h">
+      <Filter>EigenSRC\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\MapBase.h">
+      <Filter>EigenSRC\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\MathFunctions.h">
+      <Filter>EigenSRC\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\Matrix.h">
+      <Filter>EigenSRC\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\MatrixBase.h">
+      <Filter>EigenSRC\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\NestByValue.h">
+      <Filter>EigenSRC\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\NoAlias.h">
+      <Filter>EigenSRC\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\NumTraits.h">
+      <Filter>EigenSRC\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\PermutationMatrix.h">
+      <Filter>EigenSRC\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\PlainObjectBase.h">
+      <Filter>EigenSRC\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\ProductBase.h">
+      <Filter>EigenSRC\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\Random.h">
+      <Filter>EigenSRC\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\Redux.h">
+      <Filter>EigenSRC\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\Ref.h">
+      <Filter>EigenSRC\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\Replicate.h">
+      <Filter>EigenSRC\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\ReturnByValue.h">
+      <Filter>EigenSRC\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\Reverse.h">
+      <Filter>EigenSRC\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\Select.h">
+      <Filter>EigenSRC\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\SelfAdjointView.h">
+      <Filter>EigenSRC\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\SelfCwiseBinaryOp.h">
+      <Filter>EigenSRC\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\SolveTriangular.h">
+      <Filter>EigenSRC\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\StableNorm.h">
+      <Filter>EigenSRC\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\Stride.h">
+      <Filter>EigenSRC\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\Swap.h">
+      <Filter>EigenSRC\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\Transpose.h">
+      <Filter>EigenSRC\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\Transpositions.h">
+      <Filter>EigenSRC\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\TriangularMatrix.h">
+      <Filter>EigenSRC\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\VectorBlock.h">
+      <Filter>EigenSRC\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\VectorwiseOp.h">
+      <Filter>EigenSRC\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\Visitor.h">
+      <Filter>EigenSRC\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\arch\NEON\Complex.h">
+      <Filter>EigenSRC\Core\arch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\arch\SSE\Complex.h">
+      <Filter>EigenSRC\Core\arch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\arch\AltiVec\Complex.h">
+      <Filter>EigenSRC\Core\arch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\arch\SSE\MathFunctions.h">
+      <Filter>EigenSRC\Core\arch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\arch\NEON\PacketMath.h">
+      <Filter>EigenSRC\Core\arch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\arch\SSE\PacketMath.h">
+      <Filter>EigenSRC\Core\arch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\arch\AltiVec\PacketMath.h">
+      <Filter>EigenSRC\Core\arch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\arch\Default\Settings.h">
+      <Filter>EigenSRC\Core\arch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\products\CoeffBasedProduct.h">
+      <Filter>EigenSRC\Core\products</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\products\GeneralBlockPanelKernel.h">
+      <Filter>EigenSRC\Core\products</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\products\GeneralMatrixMatrix.h">
+      <Filter>EigenSRC\Core\products</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\products\GeneralMatrixMatrix_MKL.h">
+      <Filter>EigenSRC\Core\products</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\products\GeneralMatrixMatrixTriangular.h">
+      <Filter>EigenSRC\Core\products</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\products\GeneralMatrixMatrixTriangular_MKL.h">
+      <Filter>EigenSRC\Core\products</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\products\GeneralMatrixVector.h">
+      <Filter>EigenSRC\Core\products</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\products\GeneralMatrixVector_MKL.h">
+      <Filter>EigenSRC\Core\products</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\products\Parallelizer.h">
+      <Filter>EigenSRC\Core\products</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\products\SelfadjointMatrixMatrix.h">
+      <Filter>EigenSRC\Core\products</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\products\SelfadjointMatrixMatrix_MKL.h">
+      <Filter>EigenSRC\Core\products</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\products\SelfadjointMatrixVector.h">
+      <Filter>EigenSRC\Core\products</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\products\SelfadjointMatrixVector_MKL.h">
+      <Filter>EigenSRC\Core\products</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\products\SelfadjointProduct.h">
+      <Filter>EigenSRC\Core\products</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\products\SelfadjointRank2Update.h">
+      <Filter>EigenSRC\Core\products</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\products\TriangularMatrixMatrix.h">
+      <Filter>EigenSRC\Core\products</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\products\TriangularMatrixMatrix_MKL.h">
+      <Filter>EigenSRC\Core\products</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\products\TriangularMatrixVector.h">
+      <Filter>EigenSRC\Core\products</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\products\TriangularMatrixVector_MKL.h">
+      <Filter>EigenSRC\Core\products</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\products\TriangularSolverMatrix.h">
+      <Filter>EigenSRC\Core\products</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\products\TriangularSolverMatrix_MKL.h">
+      <Filter>EigenSRC\Core\products</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\products\TriangularSolverVector.h">
+      <Filter>EigenSRC\Core\products</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\util\BlasUtil.h">
+      <Filter>EigenSRC\Core\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\util\Constants.h">
+      <Filter>EigenSRC\Core\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\util\DisableStupidWarnings.h">
+      <Filter>EigenSRC\Core\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\util\ForwardDeclarations.h">
+      <Filter>EigenSRC\Core\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\util\Macros.h">
+      <Filter>EigenSRC\Core\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\util\Memory.h">
+      <Filter>EigenSRC\Core\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\util\Meta.h">
+      <Filter>EigenSRC\Core\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\util\MKL_support.h">
+      <Filter>EigenSRC\Core\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\util\NonMPL2.h">
+      <Filter>EigenSRC\Core\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\util\ReenableStupidWarnings.h">
+      <Filter>EigenSRC\Core\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\util\StaticAssert.h">
+      <Filter>EigenSRC\Core\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Core\util\XprHelper.h">
+      <Filter>EigenSRC\Core\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigen2Support\Geometry\AlignedBox.h">
+      <Filter>EigenSRC\Eigen2Suport</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigen2Support\Geometry\All.h">
+      <Filter>EigenSRC\Eigen2Suport</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigen2Support\Geometry\AngleAxis.h">
+      <Filter>EigenSRC\Eigen2Suport</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigen2Support\Block.h">
+      <Filter>EigenSRC\Eigen2Suport</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigen2Support\Cwise.h">
+      <Filter>EigenSRC\Eigen2Suport</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigen2Support\CwiseOperators.h">
+      <Filter>EigenSRC\Eigen2Suport</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigen2Support\Geometry\Hyperplane.h">
+      <Filter>EigenSRC\Eigen2Suport</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigen2Support\Lazy.h">
+      <Filter>EigenSRC\Eigen2Suport</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigen2Support\LeastSquares.h">
+      <Filter>EigenSRC\Eigen2Suport</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigen2Support\LU.h">
+      <Filter>EigenSRC\Eigen2Suport</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigen2Support\Macros.h">
+      <Filter>EigenSRC\Eigen2Suport</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigen2Support\MathFunctions.h">
+      <Filter>EigenSRC\Eigen2Suport</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigen2Support\Memory.h">
+      <Filter>EigenSRC\Eigen2Suport</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigen2Support\Meta.h">
+      <Filter>EigenSRC\Eigen2Suport</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigen2Support\Minor.h">
+      <Filter>EigenSRC\Eigen2Suport</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigen2Support\Geometry\ParametrizedLine.h">
+      <Filter>EigenSRC\Eigen2Suport</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigen2Support\QR.h">
+      <Filter>EigenSRC\Eigen2Suport</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigen2Support\Geometry\Quaternion.h">
+      <Filter>EigenSRC\Eigen2Suport</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigen2Support\Geometry\Rotation2D.h">
+      <Filter>EigenSRC\Eigen2Suport</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigen2Support\Geometry\RotationBase.h">
+      <Filter>EigenSRC\Eigen2Suport</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigen2Support\Geometry\Scaling.h">
+      <Filter>EigenSRC\Eigen2Suport</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigen2Support\SVD.h">
+      <Filter>EigenSRC\Eigen2Suport</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigen2Support\Geometry\Transform.h">
+      <Filter>EigenSRC\Eigen2Suport</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigen2Support\Geometry\Translation.h">
+      <Filter>EigenSRC\Eigen2Suport</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigen2Support\TriangularSolver.h">
+      <Filter>EigenSRC\Eigen2Suport</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigen2Support\VectorBlock.h">
+      <Filter>EigenSRC\Eigen2Suport</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Geometry\AlignedBox.h">
+      <Filter>EigenSRC\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Geometry\AngleAxis.h">
+      <Filter>EigenSRC\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Geometry\EulerAngles.h">
+      <Filter>EigenSRC\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Geometry\arch\Geometry_SSE.h">
+      <Filter>EigenSRC\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Geometry\Homogeneous.h">
+      <Filter>EigenSRC\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Geometry\Hyperplane.h">
+      <Filter>EigenSRC\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Geometry\OrthoMethods.h">
+      <Filter>EigenSRC\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Geometry\ParametrizedLine.h">
+      <Filter>EigenSRC\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Geometry\Quaternion.h">
+      <Filter>EigenSRC\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Geometry\Rotation2D.h">
+      <Filter>EigenSRC\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Geometry\RotationBase.h">
+      <Filter>EigenSRC\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Geometry\Scaling.h">
+      <Filter>EigenSRC\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Geometry\Transform.h">
+      <Filter>EigenSRC\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Geometry\Translation.h">
+      <Filter>EigenSRC\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Geometry\Umeyama.h">
+      <Filter>EigenSRC\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Householder\BlockHouseholder.h">
+      <Filter>EigenSRC\Householder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Householder\Householder.h">
+      <Filter>EigenSRC\Householder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Householder\HouseholderSequence.h">
+      <Filter>EigenSRC\Householder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\IterativeLinearSolvers\BasicPreconditioners.h">
+      <Filter>EigenSRC\IterativeLinearSolver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\IterativeLinearSolvers\BiCGSTAB.h">
+      <Filter>EigenSRC\IterativeLinearSolver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\IterativeLinearSolvers\ConjugateGradient.h">
+      <Filter>EigenSRC\IterativeLinearSolver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\IterativeLinearSolvers\IncompleteLUT.h">
+      <Filter>EigenSRC\IterativeLinearSolver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\IterativeLinearSolvers\IterativeSolverBase.h">
+      <Filter>EigenSRC\IterativeLinearSolver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Jacobi\Jacobi.h">
+      <Filter>EigenSRC\Jacobi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\LU\Determinant.h">
+      <Filter>EigenSRC\LU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\LU\FullPivLU.h">
+      <Filter>EigenSRC\LU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\LU\Inverse.h">
+      <Filter>EigenSRC\LU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\LU\arch\Inverse_SSE.h">
+      <Filter>EigenSRC\LU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\LU\PartialPivLU.h">
+      <Filter>EigenSRC\LU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\LU\PartialPivLU_MKL.h">
+      <Filter>EigenSRC\LU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\MetisSupport\MetisSupport.h">
+      <Filter>EigenSRC\MetisSupport</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigenvalues\ComplexEigenSolver.h">
+      <Filter>EigenSRC\Eigenvalues</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigenvalues\ComplexSchur.h">
+      <Filter>EigenSRC\Eigenvalues</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigenvalues\ComplexSchur_MKL.h">
+      <Filter>EigenSRC\Eigenvalues</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigenvalues\EigenSolver.h">
+      <Filter>EigenSRC\Eigenvalues</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigenvalues\GeneralizedEigenSolver.h">
+      <Filter>EigenSRC\Eigenvalues</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigenvalues\GeneralizedSelfAdjointEigenSolver.h">
+      <Filter>EigenSRC\Eigenvalues</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigenvalues\HessenbergDecomposition.h">
+      <Filter>EigenSRC\Eigenvalues</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigenvalues\MatrixBaseEigenvalues.h">
+      <Filter>EigenSRC\Eigenvalues</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigenvalues\RealQZ.h">
+      <Filter>EigenSRC\Eigenvalues</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigenvalues\RealSchur.h">
+      <Filter>EigenSRC\Eigenvalues</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigenvalues\RealSchur_MKL.h">
+      <Filter>EigenSRC\Eigenvalues</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigenvalues\SelfAdjointEigenSolver.h">
+      <Filter>EigenSRC\Eigenvalues</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigenvalues\SelfAdjointEigenSolver_MKL.h">
+      <Filter>EigenSRC\Eigenvalues</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\Eigenvalues\Tridiagonalization.h">
+      <Filter>EigenSRC\Eigenvalues</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\misc\blas.h">
+      <Filter>EigenSRC\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\misc\Image.h">
+      <Filter>EigenSRC\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\misc\Kernel.h">
+      <Filter>EigenSRC\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\misc\Solve.h">
+      <Filter>EigenSRC\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\misc\SparseSolve.h">
+      <Filter>EigenSRC\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\OrderingMethods\Amd.h">
+      <Filter>EigenSRC\OrderingMethods</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\OrderingMethods\Eigen_Colamd.h">
+      <Filter>EigenSRC\OrderingMethods</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\OrderingMethods\Ordering.h">
+      <Filter>EigenSRC\OrderingMethods</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\PardisoSupport\PardisoSupport.h">
+      <Filter>EigenSRC\PardisoSupport</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\PaStiXSupport\PaStiXSupport.h">
+      <Filter>EigenSRC\PaStiXSupport</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\plugins\ArrayCwiseBinaryOps.h">
+      <Filter>EigenSRC\plugins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\plugins\ArrayCwiseUnaryOps.h">
+      <Filter>EigenSRC\plugins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\plugins\BlockMethods.h">
+      <Filter>EigenSRC\plugins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\plugins\CommonCwiseBinaryOps.h">
+      <Filter>EigenSRC\plugins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\plugins\CommonCwiseUnaryOps.h">
+      <Filter>EigenSRC\plugins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\plugins\MatrixCwiseBinaryOps.h">
+      <Filter>EigenSRC\plugins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\plugins\MatrixCwiseUnaryOps.h">
+      <Filter>EigenSRC\plugins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\QR\ColPivHouseholderQR.h">
+      <Filter>EigenSRC\QR</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\QR\ColPivHouseholderQR_MKL.h">
+      <Filter>EigenSRC\QR</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\QR\FullPivHouseholderQR.h">
+      <Filter>EigenSRC\QR</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\QR\HouseholderQR.h">
+      <Filter>EigenSRC\QR</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\QR\HouseholderQR_MKL.h">
+      <Filter>EigenSRC\QR</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseCholesky\SimplicialCholesky.h">
+      <Filter>EigenSRC\SparseCholesky</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseCholesky\SimplicialCholesky_impl.h">
+      <Filter>EigenSRC\SparseCholesky</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseCore\AmbiVector.h">
+      <Filter>EigenSRC\SparseCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseCore\CompressedStorage.h">
+      <Filter>EigenSRC\SparseCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseCore\ConservativeSparseSparseProduct.h">
+      <Filter>EigenSRC\SparseCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseCore\MappedSparseMatrix.h">
+      <Filter>EigenSRC\SparseCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseCore\SparseBlock.h">
+      <Filter>EigenSRC\SparseCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseCore\SparseColEtree.h">
+      <Filter>EigenSRC\SparseCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseCore\SparseCwiseBinaryOp.h">
+      <Filter>EigenSRC\SparseCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseCore\SparseCwiseUnaryOp.h">
+      <Filter>EigenSRC\SparseCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseCore\SparseDenseProduct.h">
+      <Filter>EigenSRC\SparseCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseCore\SparseDiagonalProduct.h">
+      <Filter>EigenSRC\SparseCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseCore\SparseDot.h">
+      <Filter>EigenSRC\SparseCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseCore\SparseFuzzy.h">
+      <Filter>EigenSRC\SparseCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseCore\SparseMatrix.h">
+      <Filter>EigenSRC\SparseCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseCore\SparseMatrixBase.h">
+      <Filter>EigenSRC\SparseCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseCore\SparsePermutation.h">
+      <Filter>EigenSRC\SparseCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseCore\SparseProduct.h">
+      <Filter>EigenSRC\SparseCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseCore\SparseRedux.h">
+      <Filter>EigenSRC\SparseCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseCore\SparseSelfAdjointView.h">
+      <Filter>EigenSRC\SparseCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseCore\SparseSparseProductWithPruning.h">
+      <Filter>EigenSRC\SparseCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseCore\SparseTranspose.h">
+      <Filter>EigenSRC\SparseCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseCore\SparseTriangularView.h">
+      <Filter>EigenSRC\SparseCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseCore\SparseUtil.h">
+      <Filter>EigenSRC\SparseCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseCore\SparseVector.h">
+      <Filter>EigenSRC\SparseCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseCore\SparseView.h">
+      <Filter>EigenSRC\SparseCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseCore\TriangularSolver.h">
+      <Filter>EigenSRC\SparseCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseLU\SparseLU.h">
+      <Filter>EigenSRC\SparseLU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseLU\SparseLU_column_bmod.h">
+      <Filter>EigenSRC\SparseLU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseLU\SparseLU_column_dfs.h">
+      <Filter>EigenSRC\SparseLU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseLU\SparseLU_copy_to_ucol.h">
+      <Filter>EigenSRC\SparseLU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseLU\SparseLU_gemm_kernel.h">
+      <Filter>EigenSRC\SparseLU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseLU\SparseLU_heap_relax_snode.h">
+      <Filter>EigenSRC\SparseLU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseLU\SparseLU_kernel_bmod.h">
+      <Filter>EigenSRC\SparseLU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseLU\SparseLU_Memory.h">
+      <Filter>EigenSRC\SparseLU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseLU\SparseLU_panel_bmod.h">
+      <Filter>EigenSRC\SparseLU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseLU\SparseLU_panel_dfs.h">
+      <Filter>EigenSRC\SparseLU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseLU\SparseLU_pivotL.h">
+      <Filter>EigenSRC\SparseLU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseLU\SparseLU_pruneL.h">
+      <Filter>EigenSRC\SparseLU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseLU\SparseLU_relax_snode.h">
+      <Filter>EigenSRC\SparseLU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseLU\SparseLU_Structs.h">
+      <Filter>EigenSRC\SparseLU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseLU\SparseLU_SupernodalMatrix.h">
+      <Filter>EigenSRC\SparseLU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseLU\SparseLU_Utils.h">
+      <Filter>EigenSRC\SparseLU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseLU\SparseLUImpl.h">
+      <Filter>EigenSRC\SparseLU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SparseQR\SparseQR.h">
+      <Filter>EigenSRC\SparseQR</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SPQRSupport\SuiteSparseQRSupport.h">
+      <Filter>EigenSRC\SPQRSupport</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\StlSupport\details.h">
+      <Filter>EigenSRC\StlSupport</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\StlSupport\StdDeque.h">
+      <Filter>EigenSRC\StlSupport</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\StlSupport\StdList.h">
+      <Filter>EigenSRC\StlSupport</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\StlSupport\StdVector.h">
+      <Filter>EigenSRC\StlSupport</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SuperLUSupport\SuperLUSupport.h">
+      <Filter>EigenSRC\SuperLUSupport</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SVD\JacobiSVD.h">
+      <Filter>EigenSRC\SVD</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SVD\JacobiSVD_MKL.h">
+      <Filter>EigenSRC\SVD</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\SVD\UpperBidiagonalization.h">
+      <Filter>EigenSRC\SVD</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eigen-eigen-ffa86ffb5570\Eigen\src\UmfPackSupport\UmfPackSupport.h">
+      <Filter>EigenSRC\UmfPackSupport</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad_ipopt\src\cppad_ipopt_nlp.hpp">
+      <Filter>cppAD\cppADIpopt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad_ipopt\src\fun_record.hpp">
+      <Filter>cppAD\cppADIpopt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad_ipopt\src\hes_fg_map.hpp">
+      <Filter>cppAD\cppADIpopt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad_ipopt\src\jac_g_map.hpp">
+      <Filter>cppAD\cppADIpopt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad_ipopt\src\sparse_map2vec.hpp">
+      <Filter>cppAD\cppADIpopt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad_ipopt\src\vec_fun_pattern.hpp">
+      <Filter>cppAD\cppADIpopt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\ipopt\solve.hpp">
+      <Filter>cppAD\cppAD\ipopt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\ipopt\solve_callback.hpp">
+      <Filter>cppAD\cppAD\ipopt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\ipopt\solve_result.hpp">
+      <Filter>cppAD\cppAD\ipopt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\example\base_adolc.hpp">
+      <Filter>cppAD\cppAD\example</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\example\cppad_eigen.hpp">
+      <Filter>cppAD\cppAD\example</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\example\eigen_plugin.hpp">
+      <Filter>cppAD\cppAD\example</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\example\matrix_mul.hpp">
+      <Filter>cppAD\cppAD\example</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\abort_recording.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\abs.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\abs_op.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\acos_op.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\ad.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\ad_assign.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\ad_binary.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\ad_ctor.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\ad_fun.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\ad_io.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\ad_tape.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\ad_valued.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\add.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\add_eq.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\add_op.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\arithmetic.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\asin_op.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\atan2.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\atan_op.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\atomic_base.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\base_complex.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\base_cond_exp.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\base_double.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\base_float.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\base_std_math.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\bender_quad.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\bool_fun.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\bool_valued.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\capacity_order.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\checkpoint.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\comp_op.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\compare.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\compute_assign.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\cond_exp.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\cond_op.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\convert.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\cos_op.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\cosh_op.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\cppad_assert.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\cskip_op.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\csum_op.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\declare_ad.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\define.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\dependent.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\discrete.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\discrete_op.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\div.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\div_eq.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\div_op.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\drivers.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\epsilon.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\equal_op_seq.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\erf.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\exp_op.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\for_jac_sweep.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\for_one.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\for_sparse_jac.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\for_two.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\forward.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\forward0sweep.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\forward1sweep.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\fun_check.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\fun_construct.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\fun_eval.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\hash_code.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\hessian.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\identical.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\independent.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\integer.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\jacobian.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\limits.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\load_op.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\log_op.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\lu_ratio.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\math_other.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\mul.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\mul_eq.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\mul_op.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\near_equal_ext.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\num_skip.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\old_atomic.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\omp_max_thread.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\op.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\op_code.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\opt_val_hes.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\optimize.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\ordered.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\par_var.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\parallel_ad.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\parameter_op.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\player.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\pod_vector.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\pow.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\pow_op.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\print_for.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\print_op.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\prototype_op.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\recorder.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\rev_hes_sweep.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\rev_jac_sweep.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\rev_one.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\rev_sparse_hes.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\rev_sparse_jac.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\rev_two.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\reverse.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\reverse_sweep.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\sign.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\sign_op.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\sin_op.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\sinh_op.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\sparse.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\sparse_binary_op.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\sparse_color.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\sparse_hessian.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\sparse_jacobian.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\sparse_list.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\sparse_pack.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\sparse_pattern.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\sparse_set.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\sparse_unary_op.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\sqrt_op.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\std_math_ad.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\std_set.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\store_op.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\sub.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\sub_eq.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\sub_op.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\tan_op.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\tanh_op.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\tape_link.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\test_vector.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\testvector.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\unary_minus.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\unary_plus.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\undef.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\user_ad.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\value.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\var2par.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cppad-20140403\cppad\local\vec_ad.hpp">
+      <Filter>cppAD\cppAD\local</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libipopt\include\coin\config_ipopt.h">
+      <Filter>ipopt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libipopt\include\coin\config_ipopt_default.h">
+      <Filter>ipopt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libipopt\include\coin\IpAlgTypes.hpp">
+      <Filter>ipopt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libipopt\include\coin\IpCachedResults.hpp">
+      <Filter>ipopt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libipopt\include\coin\IpDebug.hpp">
+      <Filter>ipopt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libipopt\include\coin\IpException.hpp">
+      <Filter>ipopt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libipopt\include\coin\IpIpoptApplication.hpp">
+      <Filter>ipopt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libipopt\include\coin\IpIpoptCalculatedQuantities.hpp">
+      <Filter>ipopt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libipopt\include\coin\IpJournalist.hpp">
+      <Filter>ipopt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libipopt\include\coin\IpMatrix.hpp">
+      <Filter>ipopt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libipopt\include\coin\IpNLP.hpp">
+      <Filter>ipopt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libipopt\include\coin\IpObserver.hpp">
+      <Filter>ipopt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libipopt\include\coin\IpoptConfig.h">
+      <Filter>ipopt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libipopt\include\coin\IpOptionsList.hpp">
+      <Filter>ipopt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libipopt\include\coin\IpReferenced.hpp">
+      <Filter>ipopt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libipopt\include\coin\IpRegOptions.hpp">
+      <Filter>ipopt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libipopt\include\coin\IpReturnCodes.h">
+      <Filter>ipopt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libipopt\include\coin\IpReturnCodes.hpp">
+      <Filter>ipopt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libipopt\include\coin\IpReturnCodes_inc.h">
+      <Filter>ipopt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libipopt\include\coin\IpSmartPtr.hpp">
+      <Filter>ipopt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libipopt\include\coin\IpSolveStatistics.hpp">
+      <Filter>ipopt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libipopt\include\coin\IpStdCInterface.h">
+      <Filter>ipopt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libipopt\include\coin\IpSymMatrix.hpp">
+      <Filter>ipopt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libipopt\include\coin\IpTaggedObject.hpp">
+      <Filter>ipopt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libipopt\include\coin\IpTimedTask.hpp">
+      <Filter>ipopt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libipopt\include\coin\IpTNLP.hpp">
+      <Filter>ipopt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libipopt\include\coin\IpTNLPReducer.hpp">
+      <Filter>ipopt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libipopt\include\coin\IpTypes.hpp">
+      <Filter>ipopt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libipopt\include\coin\IpUtils.hpp">
+      <Filter>ipopt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libipopt\include\coin\IpVector.hpp">
+      <Filter>ipopt</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\cppad-20140403\cppad\local\config.h.in">
+      <Filter>cppAD\cppAD\local</Filter>
+    </None>
+    <None Include="..\libipopt\include\coin\IpReturnCodes.inc">
+      <Filter>ipopt</Filter>
+    </None>
+  </ItemGroup>
+</Project>
