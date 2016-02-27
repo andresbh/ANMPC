@@ -1,7 +1,7 @@
 //#include <stdlib.h>
 
 #include <qpOASES.hpp>
-//#include "mpcCP.cpp"
+
 #include <iostream>
 
 #include <Eigen/Eigen>
@@ -10,6 +10,7 @@
 using namespace Eigen;
 using namespace LTI_Object;
 USING_NAMESPACE_QPOASES
+
 
 template <typename _Scalar>
 class LMPC: public LTI<_Scalar>
