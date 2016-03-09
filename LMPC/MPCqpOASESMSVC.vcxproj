@@ -13,6 +13,9 @@
   <ItemGroup>
     <ClCompile Include="MPC.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="LMPC.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectName>MPCqpOASES</ProjectName>
     <ProjectGuid>{A7878676-B69B-4871-B343-B4FFBB407E2D}</ProjectGuid>
