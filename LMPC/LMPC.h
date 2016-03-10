@@ -398,19 +398,6 @@ public:
     std::cout << "F_con" << std::endl;
     std::cout << F_con << std::endl;
 
-    W_con.resize((this->Hp + 1)*this->B.cols(), this->Hu*this->B.cols());
-    W_con.setZero();
-    w_con.resize(this->Hu * 2 * this->B.cols(), 1);
-    w_con.setZero();
-
-    for (int ii = 0; ii < this->Hu; ii++) // 
-    {
-      W_con.block(uw_block.rows()*ii, ii*uw_block.cols(), uw_block.rows(), uw_block.cols()) =
-        uf_block;
-
-      w_con.block(au_block.rows()*ii, 0, au_block.rows(), au_block.cols()) =
-        au_block;
-    }
   }
 
   // prediction --------------------------------------------
