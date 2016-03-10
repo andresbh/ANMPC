@@ -58,12 +58,13 @@ int main( )
   Eigen::Matrix<real_t, Eigen::Dynamic, Eigen::Dynamic> R(2, 2);
   R << 1, 0,
        0, 1;
-  Eigen::Matrix<real_t, Eigen::Dynamic, Eigen::Dynamic> umax(2, 1), umin(2, 1), dumax(2, 1) , dumin(2, 1);
+  Eigen::Matrix<real_t, Eigen::Dynamic, Eigen::Dynamic> zmin(4, 1), zmax(4, 1), umax(2, 1), umin(2, 1), dumax(2, 1), dumin(2, 1);
   umax << 1, 2;umin << -3, -4;dumax << 5, 6;dumin << -7, -8;
+  zmax << 1E10, 2E10, 3E10, 4E10;zmin << -5E10, -6E10, -7E10, -8E10;
   
   LMPC_O->createBlockingMatrices();
   LMPC_O->createPredictionMatrices();
-  LMPC_O->createOptimizationMatrices(Q,R,umax,umin,dumax,dumin);
+  LMPC_O->createOptimizationMatrices(Q,R,umax,umin,dumax,dumin,zmax,zmin);
 // not working LMPC_O->prediction(u0, Du0, x0);
   LMPC_O->init(x0, u0.block(0, 0, u0.rows(), 1));
   LMPC_O->qpSolve(x0, u0.col(0), Du0, r, u0);

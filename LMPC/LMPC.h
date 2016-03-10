@@ -296,17 +296,18 @@ public:
     Eigen::Matrix<_Scalar, Dynamic, 1> umax,
     Eigen::Matrix<_Scalar, Dynamic, 1> umin,
     Eigen::Matrix<_Scalar, Dynamic, 1> dumax,
-    Eigen::Matrix<_Scalar, Dynamic, 1> dumin
+    Eigen::Matrix<_Scalar, Dynamic, 1> dumin,
+    Eigen::Matrix<_Scalar, Dynamic, 1> zmax,
+    Eigen::Matrix<_Scalar, Dynamic, 1> zmin
     )
   {
     int nbr_constr_ublk, nbr_constr_dublk;
     Eigen::Matrix<_Scalar, Dynamic, Dynamic> temp;
-    Eigen::Matrix<_Scalar, Dynamic, Dynamic> uf_block, uw_block, bu_block, au_block, z_block, qwef(2, 1), qwe2(2, 1), qwew(2, 1);
+    Eigen::Matrix<_Scalar, Dynamic, Dynamic> uf_block, uw_block, bu_block, au_block, z_block, gz_block, qwe(2,1), qwef(2, 1), qwe2(2, 1), qwew(2, 1);
     uf_block.resize(2 * B.cols(), B.cols()); uf_block.setZero();
     uw_block.resize(2 * B.cols(), B.cols()); uw_block.setZero();
     bu_block.resize(2 * B.cols(), 1); bu_block.setZero();
     au_block.resize(2 * B.cols(), 1); au_block.setZero();
-    z_block.resize(2 * B.cols(), 1); z_block.setZero(); // unused for zmin,zmax == -+inf
 
     Qq.resizeLike(Q);
     Qq = Theta;
@@ -326,6 +327,25 @@ public:
       qwew(0, 0) = 1;qwew(1, 0) = -1;
       qwe2(0, 0) = dumax(ii); qwe2(1, 0) = -dumin(ii);
       uw_block.block(Bde.cols() * ii, ii, Bde.cols(), 1) = qwef;
+    }
+
+    for (int ii = 0; ii < pc; ii++) // zmin or zmax
+    {
+      qwe(0, 0) = 1.0;qwe(1, 0) = -1.0;
+      qwe2(0, 0) = zmax(ii);qwe2(1, 0) = -zmin(ii);
+      if (ii == 0)
+      {
+        z_block.resizeLike(qwe);
+        z_block=qwe;
+
+        gz_block.resizeLike(qwe2);
+        gz_block = qwe2;
+      }
+      else
+      {
+        blkdiag(z_block, qwe);
+        appendv(gz_block, qwe2);
+      }
     }
     // line 530
     f_con.resize(this->Hu * 2 * this->B.cols(), 1);
@@ -378,8 +398,11 @@ public:
         appendv(f_con, bu_block);
       }
     }
-    for (int ii = 1; ii < this->duSampInclude.bottomRows(1)(0) + 1; ii++)
-    {
+    for (int ii = this->duSampInclude.bottomRows(1)(0); 0 >= ii; ii--)
+    { //548
+      F_con.block(0, (ii - 1)*me,F_con.rows(),me) += F_con.block(0, (ii)*me, F_con.rows(), me);
+      std::cout << "F_con" << std::endl;
+      std::cout << F_con << std::endl;
     }
 
     H.resize(Rr.rows(), Rr.cols());
