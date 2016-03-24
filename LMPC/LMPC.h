@@ -305,7 +305,7 @@ public:
     au_block.resize(2 * B.cols(), 1); au_block.setZero();
 
     Qq.resizeLike(Q);
-    Qq = Theta;
+    Qq = Q;
     Rr.resizeLike(R);
     Rr = R;
     
@@ -349,9 +349,14 @@ public:
     nbr_constr_ublk = uf_block.rows();
     nbr_constr_dublk = uw_block.rows();
 
-    for (int ii = 1; ii < zSampInclude.tail(1)(0) + 3; ii++)
+    for (int ii = 1; ii < zSampInclude.tail(1)(0)+2; ii++)
     {
       blkdiag(Qq,Q);
+    }
+
+    for (int ii = 1; ii < duSampInclude.tail(1)(0) + 1; ii++)
+    {
+      blkdiag(Rr, R);
     }
     
     F_con.resizeLike(uf_block);
@@ -408,6 +413,9 @@ public:
     std::cout << Rr.rows()<<","<< Rr.cols() << std::endl;
     std::cout << "Qq" << std::endl;
     std::cout << Qq.rows() << "," << Qq.cols() << std::endl;
+    std::cout << "Theta" << std::endl;
+    std::cout << Theta.rows() << "," << Theta.cols() << std::endl;
+    \\ 661
     H.resize(Rr.rows(), Rr.cols());
     H = Theta.transpose()*Qq*Theta + Rr;
   }
