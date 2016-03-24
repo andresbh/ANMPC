@@ -1,188 +1,56 @@
-//#include <stdlib.h>
-
-#include <qpOASES.hpp>
-
-#include <iostream>
-
-#include <Eigen/Eigen>
-#include "LTI.h"
-
-using namespace Eigen;
-using namespace LTI_Object;
-USING_NAMESPACE_QPOASES
-
-
-template <typename _Scalar>
-class LMPC: public LTI<_Scalar>
-{  
-public:
-  Options mpcOptions;
-  SQProblem *mpcQP;
-  Eigen::Matrix<_Scalar, Dynamic, Dynamic> Grun;
-  Eigen::Matrix<_Scalar, Dynamic, Dynamic> Omega;
-  Eigen::Matrix<_Scalar, Dynamic, 1> omega;
-
-  Eigen::Matrix<_Scalar, Dynamic, 1> r_traj;
-  
-  LMPC(Eigen::Matrix<_Scalar, Dynamic, 1> y0,
-       Eigen::Matrix<_Scalar, 1, Dynamic> A0,
-       Eigen::Matrix<_Scalar, 1, Dynamic> B0
-    ) : LMPC::LTI(y0, A0, B0)
-  {  };
-  
-  LMPC(const Eigen::Matrix<_Scalar, Dynamic, 1>       y0,
-       const Eigen::Matrix<_Scalar, Dynamic, Dynamic> A0,
-       const Eigen::Matrix<_Scalar, Dynamic, Dynamic> B0,
-       const Eigen::Matrix<_Scalar, Dynamic, Dynamic> C0,
-       const Eigen::Matrix<_Scalar, Dynamic, Dynamic> D0
-    ) : LMPC::LTI(y0, A0, B0, C0, D0)
-  {
-  };
-
-  void init(
-    const Eigen::Matrix<_Scalar, Dynamic, 1> x_est,
-    const Eigen::Matrix<_Scalar, Dynamic, 1> u_last
-    )
-  {
-    r_traj.resize(this->Hp*this->B.cols(), 1);
-    r_traj.fill(0);
-
-    Omega = this->F_con;
-    this->append(Omega, this->W_con);
-    
-    omega = -F_con.block(0, 0, F_con.rows(), this->B.cols())*u_last + this->f_con;
-    this->append(omega, this->w_con);
-
-    r_traj -= this->Phi*x_est - this->Gamma*u_last;
-    Grun = 2 * this->Theta.transpose()*this->Qq*r_traj;
-
-    std::cout << "Omega: " << std::endl << Omega << std::endl;
-    std::cout << "omega: " << std::endl << omega << std::endl;
-    
-    mpcOptions.setToMPC();
-    mpcOptions.printLevel = PL_LOW;
-    int na_l=this->H.rows();
-    int nb_l = this->Omega.rows();
-    
-    mpcQP = new SQProblem(na_l, nb_l);
-
-    mpcQP->setOptions(mpcOptions);
-    //SolutionAnalysis myAnalysis;
-    Eigen::Matrix<real_t, Eigen::Dynamic, 1> lbAa, lbb, ubb;
-    lbb.resize(this->H.cols(), 1);
-    lbb.fill(-1e32);
-    ubb.resizeLike(lbb);
-    ubb.fill(1e32);
-    lbAa.resize(this->Omega.cols(),1);
-    lbAa.fill(-1e32);
-    int nWSR = 100;
-    real_t cputime;
-    std::cout << "H:" << std::endl << this->H << std::endl;
-    std::cout << "Grun:" << std::endl << this->Grun << std::endl;
-    std::cout << "Omega:" << std::endl << this->Omega << std::endl;
-    std::cout << "lbb:" << std::endl << lbb << std::endl;
-    std::cout << "ubb:" << std::endl << ubb << std::endl;
-    std::cout << "lbAa:" << std::endl << lbAa << std::endl;
-    std::cout << "omega:" << std::endl << omega << std::endl;
-    mpcQP->init(this->H.data(), this->Grun.data(), this->Omega.data(),
-      lbb.data(), ubb.data(),
-      lbAa.data(), this->omega.data(), nWSR, &cputime);
-  };
-  
-  ~LMPC() 
-  {
-    delete mpcQP;
-  };
-
-  // qp solution --------------------------------------------
-  double qpSolve
-    (
-      const Eigen::Matrix<_Scalar, Dynamic, Dynamic> x_est, // state estimate
-      const Eigen::Matrix<_Scalar, Dynamic, Dynamic> u_last, // last input
-      const Eigen::Matrix<_Scalar, Dynamic, Dynamic> du_old, // last input change
-      const Eigen::Matrix<_Scalar, Dynamic, Dynamic> r,  // reference
-            Eigen::Matrix<_Scalar, Dynamic, Dynamic> &u  // output
-      )
-  {
-    for (int ii=0;ii < r.rows();ii++)
-    {
-      r_traj.block(ii, 0, ii*this->Hp, 1).fill(r(ii));
-    }
-
-    r_traj -= this->Phi*x_est - this->Gamma*u_last;
-    Grun = 2 * this->Theta.transpose()*this->Qq*r_traj;
-
-    Omega = this->F_con;
-    this->append(Omega, this->W_con);
-    
-    omega = -F_con.block(0, 0, F_con.rows(), this->B.cols())*u_last + this->f_con;
-    this->append(omega, this->w_con);
-    std::cout << "Omega: " << std::endl << Omega << std::endl;
-    std::cout << "omega: " << std::endl << omega << std::endl;
-    
-    Eigen::Matrix<real_t, Eigen::Dynamic, 1> lbAa, lbb, ubb;
-    lbb.resize(this->H.cols(), 1);
-    lbb.fill(-1e32);
-    ubb.resizeLike(lbb);
-    ubb.fill(1e32);
-    lbAa.resize(this->Omega.cols(), 1);
-    lbAa.fill(-1e32);
-
-    int nWSR = 10;
-    double cputime;
-    mpcQP->hotstart(this->H.data(), this->Grun.data(), this->Omega.data(),
-      lbb.data(), ubb.data(),
-      lbAa.data(), this->omega.data(), nWSR, 0);
-    std::cout << "u: " << u << std::endl;
-    mpcQP->getPrimalSolution(u.data());
-    std::cout << "u: " << u << std::endl;
-    return mpcQP->getObjVal(); // value of cost function
-  };
-};
+#include "LMPC.h"
  
 int main( )
-{ //USING_NAMESPACE_QPOASES
+{ Eigen::Matrix<real_t, Eigen::Dynamic, Eigen::Dynamic> Hh, Aa, gg, lbAa, ubAa, lbb, ubb;
 
-  Eigen::Matrix<real_t, Eigen::Dynamic, Eigen::Dynamic> Hh, Aa, gg, lbAa, ubAa, lbb, ubb;
-  
   //Eigen::Matrix<real_t, 1, Eigen::Dynamic> A0(1, 1); A0 << -0.32870;
   //Eigen::Matrix<real_t, 1, Eigen::Dynamic> B0(1, 1); B0 << 0.6065;
-  
+
   LMPC<real_t> *LMPC_O;
   Eigen::VectorXd x,y;
   y.resize(2); y.setZero();
   x.resize(1); x.setZero();
-  Eigen::Matrix<real_t, Eigen::Dynamic, Eigen::Dynamic> A0(4, 4); 
-  A0<< 0.94301  , 0.00000 , 0.07564 ,  0.00000,
+  Eigen::Matrix<real_t, Eigen::Dynamic, Eigen::Dynamic> Ad(4, 4); 
+  Ad<< 0.94301  , 0.00000 , 0.07564 ,  0.00000,
        0.00000  , 0.97323 , 0.00000 ,  0.03857,
        0.00000  , 0.00000 , 0.92209 ,  0.00000,
        0.00000  , 0.00000 , 0.00000 ,  0.96090;
-  Eigen::Matrix<real_t, Eigen::Dynamic, Eigen::Dynamic> B0(4, 2);
-  B0<< 0.08663 ,  0.00903,
+  Eigen::Matrix<real_t, Eigen::Dynamic, Eigen::Dynamic> Bd(4, 2);
+  Bd<< 0.08663 ,  0.00903,
        0.00457 ,  0.10844,
        0.00000 ,  0.22409,
        0.22953 ,  0.00000;
-  Eigen::Matrix<real_t, Eigen::Dynamic, Eigen::Dynamic> C0(2, 4); 
-  C0<< 0.50000 ,  0.00000 , 0.00000 , 0.00000,
-       0.00000 ,  0.50000 , 0.00000 , 0.00000;
-  Eigen::Matrix<real_t, Eigen::Dynamic, Eigen::Dynamic> D0(2, 2); 
-  D0<< 0 ,  0,
-       0 ,  0;
+  Eigen::Matrix<real_t, Eigen::Dynamic, Eigen::Dynamic> Cyd(2, 4); 
+  Cyd<< 0.50000 ,  0.00000 , 0.00000 , 0.00000,
+        0.00000 ,  0.50000 , 0.00000 , 0.00000;
+  Eigen::Matrix<real_t, Eigen::Dynamic, Eigen::Dynamic> Dzd(2, 2); 
+  Dzd<< 0 ,  0,
+        0 ,  0;
+  Eigen::Matrix<real_t, Eigen::Dynamic, Eigen::Dynamic> Czd(2, 4);
+  Czd = Cyd;
+  Eigen::Matrix<real_t, Eigen::Dynamic, Eigen::Dynamic> Ccd(4, 4);
+  Ccd.setIdentity() *= 0.5;
+  Eigen::Matrix<real_t, Eigen::Dynamic, Eigen::Dynamic> Dcd(4, 2);
+  Dcd.setZero();
 
   Eigen::Matrix<double, Dynamic, Dynamic> u0, x0, Du0, r;
+  Eigen::Matrix<int, Dynamic,1>  zblk, ublk;
+
   u0.resize(2, 3);
   u0 << 0, 0, 0, 0, 0, 0;
-  x0.resize(A0.cols(), 1);
+  x0.resize(Ad.cols(), 1);
   x0 << 1, 0, 0, 0;
-  r.resize(C0.rows(), 1);
+  r.resize(Czd.rows(), 1);
   r << 1, 0;
+  zblk.resize(2, 1);
+  zblk << 1,2;
+  ublk.resize(1, 1);
+  ublk << 1;
+  int Hp = 5, Hu = 2, Hw = 0;
+  LMPC_O = new LMPC<real_t>(y, Ad, Bd, Cyd, Czd, Dzd, Ccd, Dcd, zblk, ublk, Hp, Hu, Hw);
 
-  LMPC_O = new LMPC<real_t>( y, A0, B0, C0, D0);
-  
   Du0.resize(LMPC_O->Theta.cols(), 1);
   Du0.setZero();
-
-  LMPC_O->createPredictionMatrices(5, 3);
 
   Eigen::Matrix<real_t, Eigen::Dynamic, Eigen::Dynamic> Q(2, 2);
   Q << 4, 0,
@@ -190,14 +58,17 @@ int main( )
   Eigen::Matrix<real_t, Eigen::Dynamic, Eigen::Dynamic> R(2, 2);
   R << 1, 0,
        0, 1;
-  Eigen::Matrix<real_t, Eigen::Dynamic, Eigen::Dynamic> umax(2, 1), umin(2, 1), dumax(2, 1) , dumin(2, 1);
+  Eigen::Matrix<real_t, Eigen::Dynamic, Eigen::Dynamic> zmin(4, 1), zmax(4, 1), umax(2, 1), umin(2, 1), dumax(2, 1), dumin(2, 1);
   umax << 1, 2;umin << -3, -4;dumax << 5, 6;dumin << -7, -8;
-  LMPC_O->createOptimizationMatrices(Q,R,umax,umin,dumax,dumin);
-
+  zmax << 1E10, 2E10, 3E10, 4E10;zmin << -5E10, -6E10, -7E10, -8E10;
+  
+  LMPC_O->createBlockingMatrices();
+  LMPC_O->createPredictionMatrices();
+  LMPC_O->createOptimizationMatrices(Q,R,umax,umin,dumax,dumin,zmax,zmin);
 // not working LMPC_O->prediction(u0, Du0, x0);
   LMPC_O->init(x0, u0.block(0, 0, u0.rows(), 1));
   LMPC_O->qpSolve(x0, u0.col(0), Du0, r, u0);
-
+  
 	// Setup data of first QP...
   int na_l = 2, nb_l = 1;
   Hh.resize(na_l, na_l);
