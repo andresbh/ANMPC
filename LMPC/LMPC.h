@@ -158,11 +158,6 @@ public:
     ne  = Bde.rows();
     me = Bde.cols();
 
-    std::cout << "Ade" << std::endl;
-    std::cout << Ade << std::endl;
-
-    std::cout << "Bde" << std::endl;
-    std::cout << Bde << std::endl;
   };
 
   // init -----------------------
@@ -373,7 +368,7 @@ public:
 
     W_con.resizeLike(uw_block);
     W_con = uw_block;
-    appendv(W_con, MatrixS::Zero(nbr_constr_ublk, me*(duSampInclude.bottomRows(1)(0) + 1) - me));
+    appendh(W_con, MatrixS::Zero(nbr_constr_ublk, me*(duSampInclude.bottomRows(1)(0) + 1) - me));
 
     w_con.resizeLike(au_block);
     w_con = au_block;
@@ -392,35 +387,29 @@ public:
         appendh(temp, uf_block);
         appendh(temp, MatrixS::Zero(nbr_constr_ublk,me*(duSampInclude.bottomRows(1)(0) + 1) - (ii + 1)*me));
         appendv(F_con, temp);
-        std::cout << "F_con" << std::endl;
-        std::cout << F_con << std::endl;
 
         appendv(f_con, bu_block);
+
+        temp.resize(nbr_constr_dublk, ii*me);
+        temp.setZero();
+        appendh(temp, uw_block);
+        appendh(temp, MatrixS::Zero(nbr_constr_dublk, me*(duSampInclude.bottomRows(1)(0) + 1) - (ii + 1)*me));
+        appendv(W_con, temp);
+
+        appendv(w_con, au_block);
       }
     }
-    for (int ii = this->duSampInclude.bottomRows(1)(0); 0 >= ii; ii--)
+
+    for (int ii = this->duSampInclude.bottomRows(1)(0); ii >0 ; --ii)
     { //548
       F_con.block(0, (ii - 1)*me,F_con.rows(),me) += F_con.block(0, (ii)*me, F_con.rows(), me);
-      std::cout << "F_con" << std::endl;
-      std::cout << F_con << std::endl;
     }
-
+    std::cout << "Rr" << std::endl;
+    std::cout << Rr.rows()<<","<< Rr.cols() << std::endl;
+    std::cout << "Qq" << std::endl;
+    std::cout << Qq.rows() << "," << Qq.cols() << std::endl;
     H.resize(Rr.rows(), Rr.cols());
     H = Theta.transpose()*Qq*Theta + Rr;
-
-    for (int ii = 0; ii < this->duSampInclude.bottomRows(1)(0) + 1; ii++) // 
-    {
-      for (int jj = 0;jj <= ii;jj++)
-      {
-        F_con.block(uf_block.rows()*ii, jj*uf_block.cols(), uf_block.rows(), uf_block.cols()) =
-          uf_block;
-      }
-      f_con.block(bu_block.rows()*ii, 0, bu_block.rows(), bu_block.cols()) =
-        bu_block;
-    }
-    std::cout << "F_con" << std::endl;
-    std::cout << F_con << std::endl;
-
   }
 
   // prediction --------------------------------------------
