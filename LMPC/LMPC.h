@@ -52,6 +52,10 @@ public:
   Eigen::Matrix<_Scalar, Dynamic, Dynamic> Psi; // prediction matrix
   Eigen::Matrix<_Scalar, Dynamic, Dynamic> Gamma; // prediction matrix
   Eigen::Matrix<_Scalar, Dynamic, Dynamic> Theta; // prediction matrix
+  Eigen::Matrix<_Scalar, Dynamic, Dynamic> Psi_c; // constraint prediction matrix
+  Eigen::Matrix<_Scalar, Dynamic, Dynamic> Gamma_c; // constraint prediction matrix
+  Eigen::Matrix<_Scalar, Dynamic, Dynamic> Theta_c; // constraint prediction matrix
+
   Eigen::Matrix<_Scalar, Dynamic, Dynamic> Qq; // optimization matrix
   Eigen::Matrix<_Scalar, Dynamic, Dynamic> Rr; // optimization matrix
   Eigen::Matrix<_Scalar, Dynamic, Dynamic> H; // optimization matrix
@@ -251,6 +255,7 @@ public:
   void createPredictionMatrices() // prediction horizon, control horizon
   {
     Eigen::Matrix<_Scalar, Dynamic, Dynamic> T, Tc;
+    Eigen::Matrix<int, Dynamic, Dynamic> zRowInclude;
     T.resizeLike(Czde); 
     Tc.resizeLike(Ccde);
 
@@ -258,7 +263,7 @@ public:
     Eigen::Matrix<_Scalar, Dynamic, Dynamic> temp;
     temp.resize(ne, Gamma.cols());
 
-    for (int kk = 1;kk < zSampInclude.tail(1)(0)+3; kk++)
+    for (int kk = 1;kk < zSampInclude.tail(1)(0)+2; kk++)
     {
       if(kk==1)
       {
@@ -271,6 +276,8 @@ public:
       }
       else
       {
+        this->blkdiag(T, this->Czde);
+        this->blkdiag(Tc, this->Ccde);
         //populate Gamma
         appendv(Gamma, (Apow(kk - 1)*Bde + Gamma.block(ne*(kk - 2), 0, ne, Gamma.cols())));
         
@@ -278,9 +285,30 @@ public:
         temp = Gamma.block(ne*(kk - 1), 0, ne, Gamma.cols());
         appendh(temp, Theta.block(ne*(kk - 2), 0, ne, me*duSampInclude.tail(1)(0)));
         appendv(Theta, temp);
+
+        //populate Psi
+        this->appendv(Psi, Apow(kk));
         // line 515
       }
     }
+
+    Theta_c = Tc*Theta;
+    Gamma_c = Tc*Gamma;
+    Psi_c = Tc*Psi;
+
+    Theta = T*Theta;
+    Gamma = T*Gamma;
+    Psi = T*Psi;
+    
+    // 604
+    zRowInclude.resize(pze, zSampInclude.rows());
+    zRowInclude.setOnes();
+    std::cout << zRowInclude << std::endl<< std::endl;
+    std::cout << zSampInclude << std::endl;
+    zRowInclude = pze*zRowInclude.transpose()*zSampInclude;
+    std::cout << zRowInclude << std::endl;
+    //  zSampInclude;
+    //zRowInclude;
   };
 
 
@@ -349,12 +377,12 @@ public:
     nbr_constr_ublk = uf_block.rows();
     nbr_constr_dublk = uw_block.rows();
 
-    for (int ii = 1; ii < zSampInclude.tail(1)(0)+2; ii++)
+    for (int ii = 1; ii < zSampInclude.tail(1)(0); ii++)
     {
       blkdiag(Qq,Q);
     }
 
-    for (int ii = 1; ii < duSampInclude.tail(1)(0) + 1; ii++)
+    for (int ii = 1; ii < duSampInclude.tail(1)(0); ii++)
     {
       blkdiag(Rr, R);
     }
@@ -415,7 +443,7 @@ public:
     std::cout << Qq.rows() << "," << Qq.cols() << std::endl;
     std::cout << "Theta" << std::endl;
     std::cout << Theta.rows() << "," << Theta.cols() << std::endl;
-    \\ 661
+    // 661
     H.resize(Rr.rows(), Rr.cols());
     H = Theta.transpose()*Qq*Theta + Rr;
   }

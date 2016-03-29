@@ -65,7 +65,7 @@ int main( )
   LMPC_O->createBlockingMatrices();
   LMPC_O->createPredictionMatrices();
   LMPC_O->createOptimizationMatrices(Q,R,umax,umin,dumax,dumin,zmax,zmin);
-// not working LMPC_O->prediction(u0, Du0, x0);
+  LMPC_O->prediction(u0, Du0, x0);
   LMPC_O->init(x0, u0.block(0, 0, u0.rows(), 1));
   LMPC_O->qpSolve(x0, u0.col(0), Du0, r, u0);
   
