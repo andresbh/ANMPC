@@ -1,4 +1,4 @@
-ANMPC
+dynamicMatrixControl
 =====
 
-advanced nonlinear model predictive control
+dyn
