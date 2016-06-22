@@ -15,6 +15,7 @@ class EKF: public LKF< _Scalar >, public _Functor
          const double h0,
          const Matrix<_Scalar, Dynamic, Dynamic> C0, // outputs
          const int N_x0, // real number of states
+         const int N_u0,
          const int N_z0, // controlled outputs
          const Matrix<_Scalar, Dynamic, Dynamic> P0, // cov matrix estimation
          const Matrix<_Scalar, Dynamic, Dynamic> Q0, // weight for outputs
@@ -26,12 +27,12 @@ class EKF: public LKF< _Scalar >, public _Functor
                    MatrixXd::Zero(C0.rows(),u0.rows()).cast<_EKFScalar>()  //D
                  ),
          N_x(N_x0),
+         N_u(N_u0),
          N_z(N_z0)
   {   h = h0;
       x = x0;
       dx0_.resize(x.size());
       x0_.resize(x.size());
-//      model = F0;
   };
    
    int operator()( const Matrix<_Scalar, Dynamic, 1> x0 )
@@ -104,7 +105,7 @@ class EKF: public LKF< _Scalar >, public _Functor
 
    // update jacobians 
    int updateJ(       Matrix<_Scalar, Dynamic, Dynamic> &J,
-                const Matrix<_Scalar, Dynamic, 1> y0, // value do differentiate
+                const Matrix<_Scalar, Dynamic, 1> y0, // value to differentiate
                 const Matrix<_Scalar, Dynamic, 1> u0, // constant input
                 const bool diffx 
               )
@@ -114,7 +115,7 @@ class EKF: public LKF< _Scalar >, public _Functor
        jac.resize(x.rows(),u0.rows());
      int nfev=0;
      const typename int n = x.size()*int(diffx) +u0.size()*int(!diffx);
-     eps = std::sqrt(((std::max)(0.0,DBL_EPSILON)));
+     eps = DBL_EPSILON;//std::sqrt(((std::max)(0.0,DBL_EPSILON)));
      x_ = x;
      u_ = u0;
      Matrix<_Scalar, Dynamic, 1> delta;
@@ -128,15 +129,12 @@ class EKF: public LKF< _Scalar >, public _Functor
      { delta.resize(u_.rows());
        delta=eps *u_.cwiseAbs();
      }
-     //std::cout<<"delta: "<<delta.transpose()<<std::endl;
-     
+  
      for (int j = 0; j < n; ++j) 
      { if (delta(j) == 0.) 
          delta(j) = eps;
        if(diffx)
-       { //std::cout<<"xjac_: "<<x_.transpose()<<std::endl;
-         x_(j) += delta(j);
-         //std::cout<<"xjac+: "<<x_.transpose()<<std::endl;
+       { x_(j) += delta(j);
        }
        else
          u_(j) += delta(j);
@@ -146,7 +144,6 @@ class EKF: public LKF< _Scalar >, public _Functor
                             u_, 
                             x_.segment(N_x,N_z), 
                             val1); nfev++;
-       //std::cout<<"val1: "<<val1.transpose()<<std::endl;
        if(diffx)
          x_(j) -= 2*delta(j);
        else
@@ -155,7 +152,6 @@ class EKF: public LKF< _Scalar >, public _Functor
                             u_, 
                             x_.segment(N_x, N_z), 
                             val2); nfev++;
-       //std::cout<<"val2: "<<val2.transpose()<<std::endl;
        if(diffx)
          x_ = x;
        else
